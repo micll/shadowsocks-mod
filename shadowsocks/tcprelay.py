@@ -630,9 +630,8 @@ class TCPRelayHandler(object):
     def _handel_protocol_error(self, client_address, ogn_data):
         if self._config['redirect_verbose']:
             logging.warn(
-                "Protocol ERROR, TCP ogn data %s from %s:%d via port %d" %
-                (binascii.hexlify(ogn_data),
-                 client_address[0],
+                "Protocol ERROR, from %s:%d via port %d" %
+                (client_address[0],
                  client_address[1],
                  self._server._listen_port))
         if client_address[0] not in self._server.wrong_iplist and client_address[
@@ -655,9 +654,8 @@ class TCPRelayHandler(object):
     def _handel_mu_protocol_error(self, client_address, ogn_data):
         if self._config['redirect_verbose']:
             logging.warn(
-                "Protocol ERROR, TCP ogn data %s from %s:%d via port %d" %
-                (binascii.hexlify(ogn_data),
-                 client_address[0],
+                "Protocol ERROR, from %s:%d via port %d" %
+                (client_address[0],
                  client_address[1],
                  self._server._listen_port))
         if client_address[0] not in self._server.wrong_iplist and client_address[
